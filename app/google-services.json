@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "490744314414",
+    "firebase_url": "https://liga-local-futbolsala-banyeres-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "liga-local-futbolsala-banyeres",
+    "storage_bucket": "liga-local-futbolsala-banyeres.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:490744314414:android:554d3c602cdf9e582abdbf",
+        "android_client_info": {
+          "package_name": "tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "490744314414-mkb675m2lr0d43fn89s4klf0pn82l1f5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZAvzVQLvej-GJxOEleujmDdd5bXzGq1Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "490744314414-mkb675m2lr0d43fn89s4klf0pn82l1f5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

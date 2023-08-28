@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/miItem1"
+        android:title="Publicaciones"
+        android:icon="@drawable/baseline_image_24"/>
+
+    <item
+        android:id="@+id/miItem2"
+        android:title="Clasificación"
+        android:icon="@drawable/baseline_format_list_numbered_24"/>
+    <item
+        android:id="@+id/miItem3"
+        android:title="Resultados"
+        android:icon="@drawable/baseline_bar_chart_24"/>
+    <item
+        android:id="@+id/miItem4"
+        android:title="Máximo goleador"
+        android:icon="@drawable/baseline_sports_soccer_24"/>
+    <item
+        android:id="@+id/miItem5"
+        android:title="Menor goleado"
+        android:icon="@drawable/baseline_sports_handball_24"/>
+    <item
+        android:id="@+id/miItem6"
+        android:title="Deportividad"
+        android:icon="@drawable/ic_thumb_up"/>
+    <item
+        android:id="@+id/miItem7"
+        android:title="Sanciones"
+        android:icon="@drawable/baseline_remove_circle_outline_24"/>
+    <item
+        android:id="@+id/miItem8"
+        android:title="Equipos"
+        android:icon="@drawable/baseline_star_outline_24"/>
+
+    <item
+        android:id="@+id/miItem9"
+        android:title="Más información"
+        android:icon="@drawable/ic_account_circle"/>
+</menu>
