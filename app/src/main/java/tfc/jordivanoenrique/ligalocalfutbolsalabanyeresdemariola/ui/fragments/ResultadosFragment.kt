@@ -22,16 +22,13 @@ import tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.databinding.Ite
 import tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.entities.Resultados
 import tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.utils.FragmentAux
 
-// Define una clase llamada ClassFragment que extiende la clase Fragment e implementa la interfaz FragmentAux
 class ResultadosFragment : Fragment(), FragmentAux {
 
-    // Declaración de variables miembro
     private lateinit var mBindingClass: FragmentResultadosBinding
     private lateinit var mFirebaseAdapterClass: FirebaseRecyclerAdapter<Resultados, SnapshotHolder>
     private lateinit var mLayoutManagerClass: RecyclerView.LayoutManager
     private lateinit var mSnapshotsRefClass: DatabaseReference
 
-    // Sobrescribe el método onCreateView para inflar y devolver la vista del fragmento
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,24 +37,19 @@ class ResultadosFragment : Fragment(), FragmentAux {
         return mBindingClass.root
     }
 
-    // Sobrescribe el método onViewCreated, que se llama después de que la vista se haya creado
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Configura la base de datos de Firebase, el adaptador y el RecyclerView
         setupFirebase()
         setupAdapter()
         setupRecyclerView()
     }
 
-    // Configura la base de datos de Firebase
     private fun setupFirebase() {
         mSnapshotsRefClass = FirebaseDatabase.getInstance().reference.child(LLFSApplication.PATH_RESULTADOS)
     }
 
-    // Configura el adaptador de FirebaseRecyclerAdapter para la lista de clasificaciones
     private fun setupAdapter() {
-        // Construye una consulta FirebaseRecyclerOptions para la entidad Clasificacion
         val query = mSnapshotsRefClass
         val options = FirebaseRecyclerOptions.Builder<Resultados>().setQuery(query) {
             val snapshot = it.getValue(Resultados::class.java)
@@ -65,18 +57,15 @@ class ResultadosFragment : Fragment(), FragmentAux {
             snapshot
         }.build()
 
-        // Crea un adaptador personalizado FirebaseRecyclerAdapter para la lista de clasificaciones
         mFirebaseAdapterClass = object : FirebaseRecyclerAdapter<Resultados, SnapshotHolder>(options) {
             private lateinit var mContext: Context
 
-            // Crea y devuelve una nueva vista para cada elemento de la lista
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SnapshotHolder {
                 mContext = parent.context
                 val view = LayoutInflater.from(mContext).inflate(R.layout.item_resultados, parent, false)
                 return SnapshotHolder(view)
             }
 
-            // Vincula los datos del modelo a la vista correspondiente en la lista
             override fun onBindViewHolder(holder: SnapshotHolder, position: Int, model: Resultados) {
                 val snapshotClass = getItem(position)
                 with(holder) {
@@ -90,14 +79,12 @@ class ResultadosFragment : Fragment(), FragmentAux {
                 }
             }
 
-            // Maneja los cambios en los datos y notifica al adaptador
             @SuppressLint("NotifyDataSetChanged")
             override fun onDataChanged() {
                 super.onDataChanged()
                 notifyDataSetChanged()
             }
 
-            // Maneja errores de Firebase Database
             override fun onError(error: DatabaseError) {
                 super.onError(error)
                 Snackbar.make(mBindingClass.root, error.message, Snackbar.LENGTH_SHORT).show()
@@ -105,7 +92,6 @@ class ResultadosFragment : Fragment(), FragmentAux {
         }
     }
 
-    // Configura el RecyclerView y su layoutManager
     private fun setupRecyclerView() {
         mLayoutManagerClass = LinearLayoutManager(context)
         mBindingClass.recyclerViewClass.apply {
@@ -115,24 +101,20 @@ class ResultadosFragment : Fragment(), FragmentAux {
         }
     }
 
-    // Inicia la escucha del adaptador cuando el fragmento está en primer plano
     override fun onStart() {
         super.onStart()
         mFirebaseAdapterClass.startListening()
     }
 
-    // Detiene la escucha del adaptador cuando el fragmento está en segundo plano
     override fun onStop() {
         super.onStop()
         mFirebaseAdapterClass.stopListening()
     }
 
-    // Implementación del método de la interfaz FragmentAux para desplazarse a la posición superior
     override fun refresh() {
         mBindingClass.recyclerViewClass.smoothScrollToPosition(0)
     }
 
-    // Clase interna para mantener la vista de cada elemento en el RecyclerView
     inner class SnapshotHolder(view: View) : RecyclerView.ViewHolder(view) {
         val binding = ItemResultadosBinding.bind(view)
 
