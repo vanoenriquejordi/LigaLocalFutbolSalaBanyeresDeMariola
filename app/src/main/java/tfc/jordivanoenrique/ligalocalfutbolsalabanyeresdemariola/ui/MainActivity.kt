@@ -142,8 +142,8 @@ class MainActivity : AppCompatActivity(), MainAux {
                     true
                 }
                 R.id.miItem9 -> {
-                    Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
-                    // Cambiar al fragmento de Perfil
+                    Toast.makeText(this, "Más información", Toast.LENGTH_SHORT).show()
+                    // Cambiar al fragmento de MásInformación
                     val fragment = ProfileFragment()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.hostFragment, fragment)
