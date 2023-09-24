@@ -76,7 +76,8 @@ class TeamFragment : Fragment(), FragmentAux {
                 with(holder) {
 
                     with(binding) {
-                        tvNumJugadores.text = snapshot.numJugadores
+                        tvPrimeraEquipacion.text = snapshot.primeraEquipacion
+                        tvSegundaEquipacion.text = snapshot.segundaEquipacion
                         tvEquipo.text = snapshot.equipo
                     }
                 }

@@ -29,18 +29,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvName"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnDrive"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Información completa de la LLFS"
-        app:icon="@drawable/baseline_open_in_browser_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
-
 
     <!--<com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogout"
@@ -53,6 +41,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnDrive" />-->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDrive"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Información completa de la LLFS"
+        app:icon="@drawable/baseline_open_in_browser_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvEmail"
+        app:layout_constraintVertical_bias="0.382" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDriveApp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descargar versión actualizada"
+        app:icon="@drawable/baseline_get_app_24"
+        app:layout_constraintBottom_toTopOf="@+id/btnOpenMaps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDrive"
+        app:layout_constraintVertical_bias="0.626" />
 
     <com.google.android.material.button.MaterialButton
     android:id="@+id/btnOpenMaps"

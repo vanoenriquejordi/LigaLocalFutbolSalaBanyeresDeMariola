@@ -1,6 +1,7 @@
 package tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.ui
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -154,6 +155,13 @@ class MainActivity : AppCompatActivity(), MainAux {
                 else -> false
             }
         }
+
+        val btnOpenDrawer: Button = findViewById(R.id.btnOpenDrawer)
+        btnOpenDrawer.setOnClickListener {
+            val drawerLayout: DrawerLayout = findViewById(R.id.drawerLayout)
+            drawerLayout.openDrawer(GravityCompat.START)
+        }
+
 
         toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(toggle)

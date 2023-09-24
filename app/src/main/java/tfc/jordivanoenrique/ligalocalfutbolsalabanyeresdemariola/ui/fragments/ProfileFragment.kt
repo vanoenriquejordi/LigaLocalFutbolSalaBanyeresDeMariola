@@ -57,6 +57,13 @@ class ProfileFragment : Fragment(), FragmentAux {
             startActivity(intent)
         }
 
+        mBinding.btnDriveApp.setOnClickListener {
+            val url = "https://drive.google.com/drive/folders/1zuR0_1MrBSOb1vn4HNKSDWJ--Y3l5HJm?usp=sharing"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+
         mBinding.btnOpenMaps.setOnClickListener {
             val latitude = 38.7141235
             val longitude = -0.6469255
