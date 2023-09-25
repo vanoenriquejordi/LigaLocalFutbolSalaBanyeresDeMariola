@@ -1,5 +1,6 @@
 package tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.ui
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
@@ -54,6 +55,10 @@ class MainActivity : AppCompatActivity(), MainAux {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Establecer la orientación a portrait (vertical)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
