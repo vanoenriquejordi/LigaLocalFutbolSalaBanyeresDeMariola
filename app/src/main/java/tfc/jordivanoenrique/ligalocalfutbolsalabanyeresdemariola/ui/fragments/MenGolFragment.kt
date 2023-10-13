@@ -62,7 +62,7 @@ class MenGolFragment : Fragment(), FragmentAux {
 
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SnapshotHolder {
                 mContext = parent.context
-                val view = LayoutInflater.from(mContext).inflate(R.layout.item_maxgol, parent, false)
+                val view = LayoutInflater.from(mContext).inflate(R.layout.item_mengol, parent, false)
                 return SnapshotHolder(view)
             }
 
