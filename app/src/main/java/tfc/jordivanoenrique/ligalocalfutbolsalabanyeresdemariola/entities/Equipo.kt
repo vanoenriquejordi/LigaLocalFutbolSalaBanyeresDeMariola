@@ -7,6 +7,8 @@ import com.google.firebase.database.IgnoreExtraProperties
 data class Equipo(@get:Exclude var id: String = "", var equipo: String = "",
                          var primeraEquipacion: String = "",
                   var segundaEquipacion: String = "",
+                  var terceraEquipacion: String = "",
+                  var cuartaEquipacion: String = "",
                          var photoUrlClass: String =""){
 
 }
