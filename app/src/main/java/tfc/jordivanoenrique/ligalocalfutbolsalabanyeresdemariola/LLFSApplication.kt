@@ -13,6 +13,7 @@ class LLFSApplication : Application() {
         const val PATH_SANCIONES= "sanciones"
         const val PATH_RESULTADOS= "resultados"
         const val PATH_TEAM= "equipos"
+        const val PATH_PROXJORN= "proximajornada"
 
         lateinit var currentUser: FirebaseUser
     }

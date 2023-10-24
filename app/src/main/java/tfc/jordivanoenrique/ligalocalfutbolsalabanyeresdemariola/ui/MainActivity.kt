@@ -19,12 +19,14 @@ import com.google.firebase.auth.FirebaseAuth
 import tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.R
 import tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.LLFSApplication
 import tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.databinding.ActivityMainBinding
+import tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.entities.ProximaJornada
 import tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.ui.fragments.ClassFragment
 import tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.ui.fragments.DeportividadFragment
 import tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.ui.fragments.HomeFragment
 import tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.ui.fragments.MaxGolFragment
 import tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.ui.fragments.MenGolFragment
 import tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.ui.fragments.ProfileFragment
+import tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.ui.fragments.ProximaJornadaFragment
 import tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.ui.fragments.ResultadosFragment
 import tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.ui.fragments.SancionesFragment
 import tfc.jordivanoenrique.ligalocalfutbolsalabanyeresdemariola.ui.fragments.TeamFragment
@@ -91,6 +93,16 @@ class MainActivity : AppCompatActivity(), MainAux {
                     Toast.makeText(this, "Resultados", Toast.LENGTH_SHORT).show()
                     // Cambiar al fragmento de Resultados
                     val fragment = ResultadosFragment()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.hostFragment, fragment)
+                        .commit()
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
+                R.id.miItem10 -> {
+                    Toast.makeText(this, "Próxima Jornada", Toast.LENGTH_SHORT).show()
+                    // Cambiar al fragmento de Próxima Jornada
+                    val fragment = ProximaJornadaFragment()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.hostFragment, fragment)
                         .commit()
@@ -223,6 +235,7 @@ class MainActivity : AppCompatActivity(), MainAux {
         val sancionesFragment = SancionesFragment()
         val resultadosFragment = ResultadosFragment()
         val teamsFragment = TeamFragment()
+        val proxjornFragment = ProximaJornadaFragment()
 
         mActiveFragment = homeFragment
 
@@ -250,6 +263,9 @@ class MainActivity : AppCompatActivity(), MainAux {
         fragmentManager.beginTransaction()
             .add(R.id.hostFragment, teamsFragment, TeamFragment::class.java.name)
             .hide(teamsFragment).commit()
+        fragmentManager.beginTransaction()
+            .add(R.id.hostFragment, proxjornFragment, ProximaJornada::class.java.name)
+            .hide(proxjornFragment).commit()
         fragmentManager.beginTransaction()
             .add(R.id.hostFragment, homeFragment, HomeFragment::class.java.name).commit()
     }

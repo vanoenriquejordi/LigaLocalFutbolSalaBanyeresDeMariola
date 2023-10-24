@@ -17,6 +17,10 @@
         android:title="Resultados"
         android:icon="@drawable/baseline_bar_chart_24"/>
     <item
+        android:id="@+id/miItem10"
+        android:title="Próxima jornada"
+        android:icon="@drawable/baseline_next_week_24"/>
+    <item
         android:id="@+id/miItem4"
         android:title="Máximo goleador"
         android:icon="@drawable/baseline_sports_soccer_24"/>

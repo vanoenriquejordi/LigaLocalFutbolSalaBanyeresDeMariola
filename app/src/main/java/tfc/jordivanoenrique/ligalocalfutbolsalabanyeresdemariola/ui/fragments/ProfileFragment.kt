@@ -51,7 +51,7 @@ class ProfileFragment : Fragment(), FragmentAux {
         }*/
 
         mBinding.btnDrive.setOnClickListener {
-            val url = "https://drive.google.com/drive/u/0/folders/1XF8Ac-JELUyKvfVqNkkqs6oLB_CcECHP"
+            val url = "https://drive.google.com/drive/folders/1vsc_WrzmXXjEQk8hWmL2ZGOFcleOMG1p"
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse(url)
             startActivity(intent)
